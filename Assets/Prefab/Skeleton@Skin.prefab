@@ -127,8 +127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6617628413752578339}
   - component: {fileID: 6617628413762469517}
-  - component: {fileID: 5589082645342148457}
-  - component: {fileID: 6104480245991336244}
+  - component: {fileID: 2039826720404008504}
   m_Layer: 0
   m_Name: Skeleton@Skin
   m_TagString: Untagged
@@ -172,7 +171,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5589082645342148457
+--- !u!114 &2039826720404008504
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,20 +185,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedEnemy: 5
   liveEnemy: 7
---- !u!114 &6104480245991336244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6617628413752937731}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 695336164dc034b4ea799d6572f3efee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 6913068747309784136, guid: 40d7da7b683dd164eb03938985885690, type: 3}
-  offset: {x: 4, y: 2, z: 0}
 --- !u!1 &6617628413752937733
 GameObject:
   m_ObjectHideFlags: 0

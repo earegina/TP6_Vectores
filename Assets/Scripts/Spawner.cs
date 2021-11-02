@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
      //enum Difficulties { Easy, Normal, Hard };
-    enum Difficulties { Easy = 1, Normal, Hard };
+    enum Difficulties { Easy = 1, Normal };
 
     [SerializeField] private GameObject[] enemyPrefabs;
     //public float startDelay = 2;
@@ -31,11 +31,7 @@ public class Spawner : MonoBehaviour
                Debug.Log("NORMAL");
                InvokeRepeating("SpawnEnemy", startDelay, spawnInterval);
            break;
-           case Difficulties.Hard:
-               Debug.Log("DIFICIL");
-               InvokeRepeating("SpawnEnemy", (startDelay - 1f), (spawnInterval - 1f));
-           break;
-           default:
+        default:
                Debug.Log("<color=#FF0000>ERROR AL ELEGIR NIVEL</color>");
                break;
        }

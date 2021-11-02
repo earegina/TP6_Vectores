@@ -5,44 +5,41 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speedEnemy = 5.0f;
+    public float speedToLook = 10.0f;
     public float liveEnemy = 7.0f;
-    bool isForward = true;
+    //bool isForward = true;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.DrawLine(transform.position, new Vector3(5, 0, 0), Color.red, 5f);
+        player = GameObject.Find("Robot Kyle");
     }
     // Update is called once per frame
     void Update()
     {
-        if (isForward)
-        {
-            MoveEnemy(Vector3.forward);
-        }
-        else
-        {
-            MoveEnemy(Vector3.back);
-        }
-
-        if (transform.position.x < 0f && !isForward)
-        {
-            isForward = true;
-        }
-
-        if (transform.position.x > 20f && isForward)
-        {
-            isForward = false;
-        }
-
-        liveEnemy -= Time.deltaTime;
-
-        if (liveEnemy <= 0)
-        {
-            Destroy(gameObject);
-        }
+        LookAtPlayer2();
+        MoveTowards();
+        
     }
     private void MoveEnemy(Vector3 direction)
     {
         transform.Translate(speedEnemy * Time.deltaTime * direction);
     }
+
+    private void MoveTowards()
+    {
+        Vector3 direction   = (player.transform.position - transform.position).normalized;
+        transform.position += speedEnemy * direction * Time.deltaTime;
+    }
+
+    /*private void LookAtPlayer()
+    {
+        Quaternion newRotation = Quaternion.LookRotation(player.transform.position - transform.position);
+        transform.rotation = newRotation;
+    }*/
+    private void LookAtPlayer2(){
+    Quaternion newRotation = Quaternion.LookRotation((player.transform.position - transform.position));
+    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedToLook * Time.deltaTime);
+
+}
 }
