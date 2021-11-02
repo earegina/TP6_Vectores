@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-     //enum Difficulties { Easy, Normal, Hard };
     enum Difficulties { Easy = 1, Normal };
-
     [SerializeField] private GameObject[] enemyPrefabs;
-    //public float startDelay = 2;
-    //public float spawnInterval = 1.5f;
-    //public int difficulty = 1;
+ 
     [SerializeField] private float startDelay = 2;
     [SerializeField] private float spawnInterval = 1.5f;
-    //[SerializeField] private int   difficulty = 1;
     [SerializeField] private Difficulties difficulty;
 
     void Start()
@@ -49,5 +44,6 @@ public class Spawner : MonoBehaviour
         int enemyIndex = Random.Range(0, enemyPrefabs.Length);
         Instantiate(enemyPrefabs[enemyIndex], transform.position, enemyPrefabs[enemyIndex].transform.rotation);
     }
+
 
 }

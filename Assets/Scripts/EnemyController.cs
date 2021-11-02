@@ -5,14 +5,16 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public float speedEnemy = 5.0f;
-    public float speedToLook = 10.0f;
     public float liveEnemy = 7.0f;
     //bool isForward = true;
     private GameObject player;
     // Start is called before the first frame update
+
     void Start()
     {
         player = GameObject.Find("Robot Kyle");
+
+
     }
     // Update is called once per frame
     void Update()
@@ -39,7 +41,7 @@ public class EnemyController : MonoBehaviour
     }*/
     private void LookAtPlayer2(){
     Quaternion newRotation = Quaternion.LookRotation((player.transform.position - transform.position));
-    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedToLook * Time.deltaTime);
+    transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, speedEnemy * Time.deltaTime);
 
 }
 }
